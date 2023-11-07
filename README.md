@@ -6,6 +6,7 @@
   ![pl](https://github.com/EVolgina/jenkins/blob/jen/start.PNG)
   ![](https://github.com/EVolgina/jenkins/blob/jen/user.PNG)
 - Сделать первоначальную настройку.
+  ![ag](https://github.com/EVolgina/jenkins/blob/jen/lern.PNG)
   ![agenr](https://github.com/EVolgina/jenkins/blob/jen/agent1.PNG)
   ![rel](https://github.com/EVolgina/jenkins/blob/jen/restatr.PNG)
   - Сдела, VM агента постоянно выклбчается и получает новый IP. Уже создала 2 новых агента, но они не включаются.
