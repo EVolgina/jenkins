@@ -2,8 +2,8 @@
 - Создать два VM: для jenkins-master и jenkins-agent.
   ![vm](https://github.com/EVolgina/jenkins/blob/jen/vm.PNG)
 - Установить Jenkins при помощи playbook.
-  ![pl]()
 - Запустить и проверить работоспособность.
+  ![pl](https://github.com/EVolgina/jenkins/blob/jen/start.PNG)
   ![]()
 - Сделать первоначальную настройку.
   ![]()
