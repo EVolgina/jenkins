@@ -1,0 +1,8 @@
+---
+hosts:
+    jenkins-master-01:
+      ansible_host: 51.250.73.253
+      ansible_ssh_private_key_file: /home/vagrant/.ssh/id_ed25519
+    jenkins-agent-01:
+      ansible_host: 130.193.51.47
+      ansible_ssh_private_key_file: /home/vagrant/.ssh/id_ed25519

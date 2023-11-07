@@ -47,15 +47,36 @@
           - git
         state: present
       register: jenkins_installed
-    - name: Ensure jenkins agents are present in known_hosts file
-      become: true
-      become_user: "{{ jenkins_user_name }}"
-      known_hosts:
-        name: "{{ hostvars[item].ansible_host }}"
-        state: present
-        key: "{{ lookup('pipe', 'ssh-keyscan {{ hostvars[item].ansible_host }}') }}"
-        hash_host: true
+    - name: start jenkins
+      become: yes
+      service:
+       name: jenkins
+       state: started
+      
+    - name: Fetch SSH keys from remote hosts
+      fetch:
+        src: /home/{{ jenkins_user_name }}/.ssh/id_rsa.pub
+        dest: /tmp/
+        flat: yes
       with_items: "{{ groups.jenkins_agents }}"
+      become: yes
+      become_user: "{{ jenkins_user_name }}"
+
+#   - name: Ensure jenkins agents are present in known_hosts file
+#     become: true
+#     become_user: "{{ jenkins_user_name }}"
+#     known_hosts:
+      # name: "{{ hostvars[item].ansible_host }}"
+      # state: present
+      # key: "{{ lookup('pipe', 'ssh-keyscan {{ hostvars[item].ansible_host }}') }}"
+      #  key: "{{ lookup('file', '/home/vagrant/.ssh/id_rsa') }}"      
+      #  key: "{{ lookup('pipe', 'ssh-keyscan -H ' + hostvars[item].ansible_host) }}"          
+#       hash_host: true
+#     with_items: "{{ groups.jenkins_agents }}"
+#    - name: Debug SSH host key
+#      debug:
+#         msg: "SSH key for {{ hostvars[item].ansible_host }} is {{ lookup('pipe', 'ssh-keyscan ' + hostvars[item].ansible_host) }}"
+#      with_items: "{{ groups.jenkins_agents }}"
     - name: Start Jenkins
       become: true
       systemd:
@@ -72,6 +93,7 @@
       authorized_key:
         user: "{{ jenkins_user_name }}"
         state: present
+      # key: "{{ ssh_key_info.ssh_public_key }}" 
         key: "{{ hostvars['jenkins-master-01']['ssh_key_info']['ssh_public_key'] }}"
     - name: Create agent_dir
       become_user: root
@@ -109,6 +131,8 @@
         name:
           - selinux
           - ansible<3.0
+          - molecule_docker
+          - molecule<3.6
         state: present
     - name: Reinstall Selinux
       become_user: root
