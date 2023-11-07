@@ -9,7 +9,7 @@
   ![ag](https://github.com/EVolgina/jenkins/blob/jen/lern.PNG)
   ![agent](https://github.com/EVolgina/jenkins/blob/jen/agent1.PNG)
   ![rel](https://github.com/EVolgina/jenkins/blob/jen/restatr.PNG)
-  - Сдела, VM агента постоянно выклбчается и получает новый IP. Уже создала 2 новых агента, но они не включаются.
+  - Сдела агента. Но VM  постоянно выключается и получает новый IP. Уже создала 2 новых агента, но они не включаются.
   Перезапускала службы и не помогло. Дальше выполнить задание не могу. Помогите разобраться.
 # Основная часть
 - Сделать Freestyle Job, который будет запускать molecule test из любого вашего репозитория с ролью.
