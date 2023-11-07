@@ -4,7 +4,7 @@
 - Установить Jenkins при помощи playbook.
 - Запустить и проверить работоспособность.
   ![pl](https://github.com/EVolgina/jenkins/blob/jen/start.PNG)
-  ![]()
+  ![](https://github.com/EVolgina/jenkins/blob/jen/user.PNG)
 - Сделать первоначальную настройку.
   ![]()
   Сдела, VM агента постоянно выклбчается и получает новый IP. Уже создала 2 новых агента, но они не включаются.
