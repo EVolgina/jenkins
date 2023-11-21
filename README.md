@@ -12,12 +12,16 @@
 # Основная часть
 - Сделать Freestyle Job, который будет запускать molecule test из любого вашего репозитория с ролью.
    ![rel](https://github.com/EVolgina/jenkins/blob/jen/zad1.PNG)
+   ![rr](https://github.com/EVolgina/jenkins/blob/jen/za1-2.PNG)
 - Сделать Declarative Pipeline Job, который будет запускать molecule test из любого вашего репозитория с ролью.
-  ![rr](https://github.com/EVolgina/jenkins/blob/jen/za1-2.PNG)
+ ![3](https://github.com/EVolgina/jenkins/blob/jen/zad1-3.PNG)
 - Перенести Declarative Pipeline в репозиторий в файл Jenkinsfile.
-  ![3](https://github.com/EVolgina/jenkins/blob/jen/zad1-3.PNG)
+   [clickhouse-role](https://github.com/EVolgina/clickhouse-role/tree/main/roles/clickhouse)
+  [decl](https://github.com/EVolgina/jenkins/blob/jen/09-ci-04-jenkins/Declarative%20Pipeline)
 - Создать Multibranch Pipeline на запуск Jenkinsfile из репозитория.
+  ![4](https://github.com/EVolgina/jenkins/blob/jen/zad2.PNG)
 - Создать Scripted Pipeline, наполнить его скриптом из pipeline.
+  [ScriptedJenkinsfile](https://github.com/EVolgina/jenkins/blob/jen/09-ci-04-jenkins/ScriptedJenkinsfile)
 - Внести необходимые изменения, чтобы Pipeline запускал ansible-playbook без флагов --check --diff, если не установлен параметр при запуске джобы (prod_run = True). По умолчанию параметр имеет значение False и - запускает прогон с флагами --check --diff.
 - Проверить работоспособность, исправить ошибки, исправленный Pipeline вложить в репозиторий в файл ScriptedJenkinsfile.
 - Отправить ссылку на репозиторий с ролью [clickhouse-role](https://github.com/EVolgina/clickhouse-role/tree/main/roles/clickhouse) и Declarative Pipeline и Scripted Pipeline.
